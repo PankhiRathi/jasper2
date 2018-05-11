@@ -163,9 +163,18 @@ body {
     font-weight: 700;
 }
 
+/**
+Original
+
 .site-logo {
     max-height: 45px;
 }
+**/
+
+.site-logo {
+	width: 600px;
+}
+
 
 .site-description {
     z-index: 10;
