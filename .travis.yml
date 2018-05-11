@@ -21,3 +21,14 @@ env:
 branches:
   only:
     - gh-pages
+after_success:
+  - cd _site
+  - git init
+  - git config user.name "Pankhi Rathi"
+  - git config user.email "pankhirathi028@gmail.com"
+  - git remote add upstream "https://$RigiResearch@github.com/PankhiRathi/rigiresearch-pankhi.git"
+  - git fetch upstream
+  - git reset upstream/master
+  - git add -A .
+  - git commit -m "[Build] ${TRAVIS_COMMIT}"
+  - git push -q upstream HEAD:master
